@@ -1,7 +1,10 @@
 // biome-ignore assist/source/organizeImports: <will fix later>
-import type { Agg2gModel } from "@/types/schema";
+import type { Data2G4GModel } from "@/types/schema";
 import type { MetricConfig, ComparisonResult } from "./comparison-types";
-import { calculateSuccessRate0, calculateSuccessRate100 } from "../../../_function/helper";
+import {
+  calculateSuccessRate0,
+  calculateSuccessRate100,
+} from "../../../_function/helper";
 import { toZonedTime } from "date-fns-tz";
 import { endOfDay, startOfDay } from "date-fns";
 
@@ -9,7 +12,7 @@ import { endOfDay, startOfDay } from "date-fns";
 export const calculateGrowthForMetric = (
   before: number,
   after: number,
-  growthType: MetricConfig["growthType"] = "standard",
+  growthType: MetricConfig["growthType"] = "standard"
 ): { delta: number; growth: number } => {
   let delta = after - before;
 
@@ -41,14 +44,17 @@ export const calculateGrowthForMetric = (
 
 // Main comparison calculation function
 export const calculateComparisonData = (
-  data: Agg2gModel[],
+  data: Data2G4GModel[],
   metricCalculators: MetricConfig[],
   beforeRange: { startDate: string; endDate: string },
   afterRange: { startDate: string; endDate: string },
-  timezone = "Asia/Makassar",
+  timezone = "Asia/Makassar"
 ): ComparisonResult[] => {
   // Filter data by date range
-  const filterByDateRange = (startDate: string, endDate: string): Agg2gModel[] => {
+  const filterByDateRange = (
+    startDate: string,
+    endDate: string
+  ): Data2G4GModel[] => {
     if (!startDate || !endDate) return [];
 
     // Convert ISO strings to dates and set to start/end of day in the target timezone
@@ -61,43 +67,60 @@ export const calculateComparisonData = (
     });
   };
 
-  const beforeData = filterByDateRange(beforeRange.startDate, beforeRange.endDate);
+  const beforeData = filterByDateRange(
+    beforeRange.startDate,
+    beforeRange.endDate
+  );
   const afterData = filterByDateRange(afterRange.startDate, afterRange.endDate);
 
-  return metricCalculators.map(({ name, calculate, growthType = "standard" }) => {
-    const before = calculate(beforeData);
-    const after = calculate(afterData);
+  return metricCalculators.map(
+    ({ name, calculate, growthType = "standard", tech }) => {
+      const before = calculate(beforeData);
+      const after = calculate(afterData);
 
-    const { delta, growth } = calculateGrowthForMetric(before, after, growthType);
+      const { delta, growth } = calculateGrowthForMetric(
+        before,
+        after,
+        growthType
+      );
 
-    return {
-      metric: name,
-      before,
-      after,
-      delta,
-      growth,
-    };
-  });
+      return {
+        metric: name,
+        before,
+        after,
+        delta,
+        growth,
+        tech,
+      };
+    }
+  );
 };
 
 // Alternative version with custom filter function (for more flexibility)
 export const calculateComparisonDataWithFilter = (
-  beforeData: Agg2gModel[],
-  afterData: Agg2gModel[],
-  metricCalculators: MetricConfig[],
+  beforeData: Data2G4GModel[],
+  afterData: Data2G4GModel[],
+  metricCalculators: MetricConfig[]
 ): ComparisonResult[] => {
-  return metricCalculators.map(({ name, calculate, growthType = "standard" }) => {
-    const before = calculate(beforeData);
-    const after = calculate(afterData);
+  return metricCalculators.map(
+    ({ name, calculate, growthType = "standard", tech }) => {
+      const before = calculate(beforeData);
+      const after = calculate(afterData);
 
-    const { delta, growth } = calculateGrowthForMetric(before, after, growthType);
+      const { delta, growth } = calculateGrowthForMetric(
+        before,
+        after,
+        growthType
+      );
 
-    return {
-      metric: name,
-      before,
-      after,
-      delta,
-      growth,
-    };
-  });
+      return {
+        metric: name,
+        before,
+        after,
+        delta,
+        growth,
+        tech,
+      };
+    }
+  );
 };

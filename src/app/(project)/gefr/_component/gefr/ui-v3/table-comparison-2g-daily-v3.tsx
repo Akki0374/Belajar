@@ -13,7 +13,7 @@ import { CalendarIcon } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
 import { useComparisonCalculation } from "./use-comparison-data";
 
-const TableComparison2GDaily: React.FC<{ data: Data2G4GModel[] }> = ({ data }) => {
+const TableComparison2GDaily: React.FC<{ data: Data2G4GModel[]; tech: string }> = ({ data, tech }) => {
   const timezone = "Asia/Makassar";
 
   const dateStrings = data.map((item) => item.BEGIN_TIME);
@@ -38,7 +38,7 @@ const TableComparison2GDaily: React.FC<{ data: Data2G4GModel[] }> = ({ data }) =
     endDate: createDateInTimezone(addDays(firstDateString, diffInDays < 7 ? 1 : 2)).toISOString(),
   });
 
-  const { comparisonData } = useComparisonCalculation(data);
+  const { comparisonData } = useComparisonCalculation(data, tech);
 
   const DateRangePicker = ({
     title,
@@ -181,23 +181,20 @@ const TableComparison2GDaily: React.FC<{ data: Data2G4GModel[] }> = ({ data }) =
                   <td className="border border-gray-200 p-3 text-right">{row.before.toFixed(2)}</td>
                   <td className="border border-gray-200 p-3 text-right">{row.after.toFixed(2)}</td>
                   <td
-                    className={`border border-gray-200 p-3 text-right ${
-                      row.growth > 5 ? "text-green-600" : row.growth < -5 ? "text-red-600" : "text-yellow-600"
-                    }`}
+                    className={`border border-gray-200 p-3 text-right ${row.growth > 5 ? "text-green-600" : row.growth < -5 ? "text-red-600" : "text-yellow-600"
+                      }`}
                   >
                     {row.delta.toFixed(2)}
                   </td>
                   <td
-                    className={`border border-gray-200 p-3 text-right ${
-                      row.growth > 5 ? "text-green-600" : row.growth < -5 ? "text-red-600" : "text-yellow-600"
-                    }`}
+                    className={`border border-gray-200 p-3 text-right ${row.growth > 5 ? "text-green-600" : row.growth < -5 ? "text-red-600" : "text-yellow-600"
+                      }`}
                   >
                     {row.growth.toFixed(2)}%
                   </td>
                   <td
-                    className={`border border-gray-200 p-3 text-center ${
-                      row.growth > 5 ? "text-green-600" : row.growth < -5 ? "text-red-600" : "text-yellow-600"
-                    }`}
+                    className={`border border-gray-200 p-3 text-center ${row.growth > 5 ? "text-green-600" : row.growth < -5 ? "text-red-600" : "text-yellow-600"
+                      }`}
                   >
                     {row.growth > 5 ? "Improved" : row.growth < -5 ? "Degrade" : "Maintain"}
                   </td>
