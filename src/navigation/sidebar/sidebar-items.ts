@@ -39,7 +39,7 @@ export const sidebarItems: NavGroup[] = [
   },
   {
     id: 2,
-    label: "Gefr Monitoring",
+    label: "DB Demo",
     items: [
       {
         title: "2G NOP",
@@ -75,6 +75,45 @@ export const sidebarItems: NavGroup[] = [
           {
             title: "4G Site Level Daily",
             url: "/gefr/monitoring/v2/4g/site/daily",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    id: 3,
+    label: "DB TI Sulawesi",
+    items: [
+      // {
+      //   title: "2G NOP",
+      //   url: "#",
+      //   icon: Fingerprint,
+      //   subItems: [
+      //     {
+      //       title: "2G NOP Level Daily",
+      //       url: "/gefr/monitoring/v2/2g/nop/daily",
+      //     },
+      //   ],
+      // },
+      // {
+      //   title: "2G Site",
+      //   url: "#",
+      //   icon: Fingerprint,
+      //   subItems: [
+      //     {
+      //       title: "2G Site Level Daily",
+      //       url: "/gefr/monitoring/v2/2g/site/daily",
+      //     },
+      //   ],
+      // },
+      {
+        title: "4G Site",
+        url: "#",
+        icon: Fingerprint,
+        subItems: [
+          {
+            title: "4G Site Level Daily",
+            url: "/gefr/monitoring/ti-sul/4g/site/daily",
           },
         ],
       },
