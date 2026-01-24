@@ -28,7 +28,7 @@ export function LoginForm() {
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      email: "sa@macto.app",
+      email: "monitoring@gmail.com",
       password: "123456",
       remember: false,
     },
