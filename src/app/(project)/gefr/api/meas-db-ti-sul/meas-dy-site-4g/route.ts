@@ -50,6 +50,25 @@ export async function GET(request: Request) {
 						SUM("UL PRB Utilization Denum AMQ") AS "UL_PRB_UTILIZATION_DENUM",
 						SUM("User DL Throughput Num AMQ") AS "USER_DL_THP_NUM",
 						SUM("User DL Throughput Denum AMQ") AS "USER_DL_THP_DENUM",
+            SUM("User UL Throughput Num AMQ") AS "USER_UL_THP_NUM",
+						SUM("User UL Throughput Denum AMQ") AS "USER_UL_THP_DENUM",
+						SUM("DL RB Available AMQ") AS "DL_RB_AVAILABLE",
+						SUM("spectrum efficiency num") AS "SE_NUM",
+						SUM("spectrum efficiency denum") AS "SE_DENUM",
+						SUM("Num Average CQI_Rev") AS "AVG_CQI_NUM",
+						SUM("Denum Average CQI_Rev") AS "AVG_CQI_DENUM",
+						SUM("Average NI of Carrier(dBm)") AS "AVG_NI_CARRIER_DBM",
+						SUM("Num CSFB SR AMQ") AS "CSFB_SETUP_SR_NUM",
+						SUM("Denum CSFB SR AMQ") AS "CSFB_SETUP_SR_DENUM",
+            SUM("Num IFHO SR AMQ") AS "IFHO_SR_NUM",
+						SUM("Denum IFHO SR AMQ") AS "IFHO_SR_DENUM",
+						SUM("Inter_Freq_HOSR_VoLTE_Num AMQ") AS "INTER_FHO_SR_NUM",
+						SUM("Inter_Freq_HOSR_VoLTE_Denum AMQ") AS "INTER_FHO_SR_DENUM",
+						SUM("SRVCC_LTE-GSM_HOSR_VoLTE_Num AMQ") AS "SRVCC_E2G_SR_NUM",
+						SUM("SRVCC_LTE-GSM_HOSR_VoLTE_Denum AMQ") AS "SRVCC_E2G_SR_DENUM",
+						SUM("SRVCC_LTE-UMTS_HOSR_VoLTE_Num AMQ") AS "SRVCC_E2W_SR_NUM",
+						SUM("SRVCC_LTE-UMTS_HOSR_VoLTE_Denum AMQ") AS "SRVCC_E2W_SR_DENUM",
+
             
             '1' AS "DENUMBY1"
           FROM

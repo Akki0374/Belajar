@@ -48,7 +48,7 @@ const CHART_CONFIGS = [
   { metric_num: "USER_UL_THP_NUM", metric_denum: "USER_UL_THP_DENUM", title: "User UL Throughput (Kbps)" },
   { metric_num: "DL_RB_AVAILABLE", metric_denum: "DENUMBY1", title: "DL PRB Available" },
   { metric_num: "SE_NUM", metric_denum: "SE_DENUM", title: "SE" },
-  { metric_num: "AVG_CQI", metric_denum: "DENUMBY1", title: "CQI" },
+  { metric_num: "AVG_CQI_NUM", metric_denum: "AVG_CQI_DENUM", title: "CQI" },
   { metric_num: "AVG_NI_CARRIER_DBM", metric_denum: "DENUMBY1", title: "AVG NI of Carrier (dBm)" },
   { metric_num: "CSFB_SETUP_SR_NUM", metric_denum: "CSFB_SETUP_SR_DENUM", title: "CSFB Preparation (%)" },
   {
