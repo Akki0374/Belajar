@@ -219,7 +219,7 @@ export const get2G4GMetricConfigs = (): MetricConfig[] => [
       if (!filteredData || filteredData.length === 0) return 0;
 
       const values = filteredData
-        .map((item) => item.MAX_MAX_NUMBER_RRC_CONNECTION_USER)
+        .map((item) => item.SUM_MAX_NUMBER_RRC_CONNECTION_USER)
         .filter((value) => value !== null && value !== undefined && !Number.isNaN(value));
 
       if (values.length === 0) return 0;
