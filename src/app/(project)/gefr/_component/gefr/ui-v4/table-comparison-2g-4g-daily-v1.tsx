@@ -38,7 +38,8 @@ const TableComparison2G4GDaily: React.FC<{ data: Data2G4GModel[]; tech: string }
     endDate: createDateInTimezone(addDays(firstDateString, diffInDays < 7 ? 1 : 2)).toISOString(),
   });
 
-  const { comparisonData } = useComparisonCalculation(data, tech);
+  // Pass date ranges to the hook so it can recalculate when they change
+  const { comparisonData } = useComparisonCalculation(data, tech, beforeRange, afterRange);
 
   const DateRangePicker = ({
     title,
