@@ -33,6 +33,7 @@ export async function GET(request: Request) {
             SUM("4G Payload (MByte) AMQ") / 1024 AS "TOTAL_PAYLOAD_GB",
             SUM("4G Payload (MByte) AMQ") / 1024 / 1024 AS "TOTAL_PAYLOAD_TB",
             SUM("Traffic_VoLTE_(erl) AMQ") AS "TRAFFIC_VOLTE_ERL",
+            SUM("Traffic_VoLTE_(erl) AMQ") / 1024 AS "TRAFFIC_VOLTE_KERL",
             SUM("Maximum Number of RRC Connection User(unit)") AS "AVG_MAX_NUMBER_RRC_CONNECTION_USER",
 						SUM("Cell Availability Num 4G AMQ") AS "AVAILABILITY_NUM",
 						SUM("Cell Availability Denum 4G AMQ") AS "AVAILABILITY_DENUM",

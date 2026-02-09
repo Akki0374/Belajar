@@ -258,6 +258,7 @@ export interface Data2G4GModel {
   DENUM_IB_BAND_4_5: number;
 
   CELL_NAME: string;
+  CELL_ID: string;
   REMARK_POWER: string;
   TOTAL_PAYLOAD_GB: number;
   TOTAL_PAYLOAD_TB: number;

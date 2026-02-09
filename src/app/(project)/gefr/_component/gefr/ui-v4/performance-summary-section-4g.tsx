@@ -87,8 +87,8 @@ export function PerformanceSummarySection4G({
 }: PerformanceSummarySectionProps) {
   const { getMetric } = useComparisonCalculation(filteredData, "4G");
 
-  const tchTraffic = getMetric("Total Payload (GB)");
-  const payloadMb = getMetric("Traffic VoLTE (KErl)");
+  const tchTraffic = getMetric("Traffic VoLTE (KErl)");
+  const payloadMb = getMetric("Total Payload (GB)");
 
   const getFilterLabel = () => {
     switch (filterBy) {

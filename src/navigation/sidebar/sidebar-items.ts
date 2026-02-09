@@ -112,8 +112,23 @@ export const sidebarItems: NavGroup[] = [
         icon: Fingerprint,
         subItems: [
           {
+            title: "4G Site Info  ",
+            url: "/gefr/monitoring/ti-sul/4g/site/info",
+          },
+          {
             title: "4G Site Level Daily",
             url: "/gefr/monitoring/ti-sul/4g/site/daily",
+          },
+        ],
+      },
+      {
+        title: "4G Site Info",
+        url: "#",
+        icon: Fingerprint,
+        subItems: [
+          {
+            title: "4G Site Info  ",
+            url: "/gefr/monitoring/ti-sul/4g/site/info",
           },
         ],
       },
