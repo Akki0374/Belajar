@@ -1,12 +1,11 @@
 "use client";
 // biome-ignore assist/source/organizeImports: <will fix later>
 import { useQuery } from "@tanstack/react-query";
-import { ErrorState, NoDataState } from "./additional-component";
+import { ErrorState, NoDataState } from "../../gefr/_component/gefr/ui-v4/additional-component";
 import { useFilterStore } from "@/stores/filterStore";
-import { EnhancedLoadingState } from "./enhanced-loading-state";
+import { EnhancedLoadingState } from "../../gefr/_component/gefr/ui-v4/enhanced-loading-state";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import type { Data2G4GModel } from "@/types/schema";
-
 interface AggCustomProps {
   area?: string;
   apiPath: string;
