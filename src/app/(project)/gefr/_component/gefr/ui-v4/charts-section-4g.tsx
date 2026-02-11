@@ -17,6 +17,16 @@ const CHART_CONFIGS = [
   { metric_num: "DL_PAYLOAD_GB", metric_denum: "DENUMBY1", title: "Total Payload (GB)" },
   { metric_num: "TRAFFIC_VOLTE_ERL", metric_denum: "DENUMBY1", title: "VoLTE Traffic (Erl)" },
   {
+    metric_num: "DL_PRB_UTILIZATION_NUM",
+    metric_denum: "DL_PRB_UTILIZATION_DENUM",
+    title: "DL PRB Utilization (%)",
+  },
+  {
+    metric_num: "UL_PRB_UTILIZATION_NUM",
+    metric_denum: "UL_PRB_UTILIZATION_DENUM",
+    title: "UL PRB Utilization (%)",
+  },
+  {
     metric_num: "SUM_MAX_NUMBER_RRC_CONNECTION_USER",
     metric_denum: "DENUMBY1",
     title: "Max RRC Connection User(xxx)ß",
@@ -38,16 +48,7 @@ const CHART_CONFIGS = [
     metric_denum: "SERVICE_DROP_RATE_DENUM",
     title: "Service Drop Rate (%)",
   },
-  {
-    metric_num: "DL_PRB_UTILIZATION_NUM",
-    metric_denum: "DL_PRB_UTILIZATION_DENUM",
-    title: "DL PRB Utilization (%)",
-  },
-  {
-    metric_num: "UL_PRB_UTILIZATION_NUM",
-    metric_denum: "UL_PRB_UTILIZATION_DENUM",
-    title: "UL PRB Utilization (%)",
-  },
+
   { metric_num: "USER_DL_THP_NUM", metric_denum: "USER_DL_THP_DENUM", title: "User DL Throughput (Kbps)" },
   { metric_num: "USER_UL_THP_NUM", metric_denum: "USER_UL_THP_DENUM", title: "User UL Throughput (Kbps)" },
   { metric_num: "DL_RB_AVAILABLE", metric_denum: "DENUMBY1", title: "DL PRB Available" },
