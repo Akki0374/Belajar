@@ -16,7 +16,7 @@ interface ChartsSectionProps {
 const CHART_CONFIGS = [
   { metric_num: "DL_PAYLOAD_GB", metric_denum: "DENUMBY1", title: "Total Payload (GB)" },
   { metric_num: "TRAFFIC_VOLTE_ERL", metric_denum: "DENUMBY1", title: "VoLTE Traffic (Erl)" },
-  { metric_num: "AVG_MAX_NUMBER_RRC_CONNECTION_USER", metric_denum: "DENUMBY1", title: "Max RRC Connection Userxxx" },
+  { metric_num: "Sum Max Number Rrc Connection User", metric_denum: "DENUMBY1", title: "Max RRC Connection Userxxx" },
   { metric_num: "AVAILABILITY_NUM", metric_denum: "AVAILABILITY_DENUM", title: "Availability (%)" },
   {
     metric_num: "RRC_SETUP_SR_NUM",
