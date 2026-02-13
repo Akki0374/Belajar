@@ -29,7 +29,7 @@ const CHART_CONFIGS = [
   {
     metric_num: "SUM_MAX_NUMBER_RRC_CONNECTION_USER",
     metric_denum: "DENUMBY1",
-    title: "Max RRC Connection User(xxx)ß",
+    title: "Max RRC Connection User",
   },
   { metric_num: "AVAILABILITY_NUM", metric_denum: "AVAILABILITY_DENUM", title: "Availability (%)" },
   {
