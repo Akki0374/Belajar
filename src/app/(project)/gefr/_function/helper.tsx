@@ -160,6 +160,16 @@ export const extractBandFromCellName4G = (cellName: string): string => {
       return "L2300";
     case "TF":
       return "L2300";
+    case "VE":
+      return "L2300";
+    case "VF":
+      return "L2300";
+    case "VV":
+      return "L2300";
+    case "VL":
+      return "L1800";
+    case "VR":
+      return "L2100";
     default:
       return "XXX";
   }
