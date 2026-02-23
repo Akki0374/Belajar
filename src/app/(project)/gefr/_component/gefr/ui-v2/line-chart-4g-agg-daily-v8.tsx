@@ -256,7 +256,7 @@ const LineChart4GAggDailyV8: React.FC<LineChartProps> = ({
                   if (isDropRatePercentage) {
                     return `${value.toFixed(4)}%`;
                   }
-                  return value.toFixed(4); // This will format to 2 decimal places
+                  return value.toFixed(2); // This will format to 2 decimal places
                 }
                 return value;
               },

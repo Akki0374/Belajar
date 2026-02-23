@@ -251,12 +251,12 @@ const LineChart4GAggDaily: React.FC<LineChartProps> = ({
               callback: (value) => {
                 if (typeof value === "number") {
                   if (isPercentage && !isDropRatePercentage) {
-                    return `${value.toFixed(4)}%`;
+                    return `${value.toFixed(2)}%`;
                   }
                   if (isDropRatePercentage) {
-                    return `${value.toFixed(4)}%`;
+                    return `${value.toFixed(2)}%`;
                   }
-                  return value.toFixed(4); // This will format to 2 decimal places
+                  return value.toFixed(2); // This will format to 2 decimal places
                 }
                 return value;
               },
