@@ -148,9 +148,13 @@ export const extractBandFromCellName4G = (cellName: string): string => {
   switch (bandCode) {
     case "ML":
       return "L1800";
+    case "EL":
+      return "L1800";
     case "MT":
       return "L900";
     case "MR":
+      return "L2100";
+    case "ER":
       return "L2100";
     case "ME":
       return "L2300";
